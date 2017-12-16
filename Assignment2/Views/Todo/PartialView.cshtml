@@ -1,0 +1,16 @@
+﻿@using Assignment2.Models
+@model TodoViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<style>
+    h4 {
+        text-transform: uppercase;
+    }
+
+</style>
+
+<div>
+    <h4 style="display:inline-block; margin-right:25px;"><b>@Model.Text</b></h4>
+    <p style="display:inline-block; color:red">@Model.TimeLeft()</p>
+    <p>@Model.GetDateDue()</p>
+</div>

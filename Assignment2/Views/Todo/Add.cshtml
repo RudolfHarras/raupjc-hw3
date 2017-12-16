@@ -1,0 +1,63 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Assignment2.Models.AddTodoViewModel
+@{
+    ViewData["Title"] = "Add new task";
+    Layout = "~/Views/Todo/_Layout.cshtml";
+}
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        -ms-border-radius: 4px;
+        border-radius: 4px;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=DateDue] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        -ms-border-radius: 4px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+</style>
+
+
+
+
+<h2>Add new task</h2>
+<form asp-action="Add" method="post">
+    Text : <input asp-for="Text" placeholder="Name of the task..."/>
+        <span asp-validation-for="Text" placeholder="Your name.."></span><br />
+    <br/>
+    Date due: <input asp-for="DateDue" style="width: 100%; padding: 8px 20px; font-size: 20px; border-radius: 4px;
+                                       margin: 8px 0;
+                                       border: 1px solid #ccc;"/>
+        <span asp-validation-for="DateDue"></span><br />
+    <br/>
+        Labels (Separate labels with comma (,) ): <input asp-for="Labels" placeholder="Labels for the task..."/>
+        <span asp-validation-for="Labels"></span><br/>
+        <input type="submit" value="Add task">
+
+</form>
